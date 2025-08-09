@@ -52,23 +52,6 @@
         animation: float 20s infinite linear;
       }
 
-      @keyframes float {
-        0% {
-          transform: translateY(100vh) rotate(0deg);
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-100vh) rotate(360deg);
-          opacity: 0;
-        }
-      }
-
       /* Header */
       header {
         background: rgba(0, 0, 0, 0.85);
@@ -1186,6 +1169,198 @@
         opacity: 1;
         transform: translateY(0);
       }
+
+      /* WhatsApp Floating Button Styles */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 9999;
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        animation: pulse 2s infinite;
+        text-decoration: none;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+        background: linear-gradient(135deg, #128c7e, #25d366);
+      }
+
+      .whatsapp-float:active {
+        transform: scale(0.95);
+      }
+
+      .whatsapp-icon {
+        font-size: 32px;
+        color: white;
+        line-height: 1;
+      }
+
+      /* Pulse Animation */
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4),
+            0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4),
+            0 0 0 10px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4),
+            0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      /* Tooltip */
+      .whatsapp-float::before {
+        content: "Chat with us on WhatsApp";
+        position: absolute;
+        right: 85px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .whatsapp-float::after {
+        content: "";
+        position: absolute;
+        right: 75px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 8px solid rgba(0, 0, 0, 0.8);
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .whatsapp-float:hover::before,
+      .whatsapp-float:hover::after {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Notification Badge */
+      .whatsapp-float .notification-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background: #ff4444;
+        color: white;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+        animation: bounce 2s infinite;
+        border: 2px solid white;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        60%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        80% {
+          transform: translateY(-5px);
+        }
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .whatsapp-float {
+          width: 60px;
+          height: 60px;
+          bottom: 20px;
+          right: 20px;
+        }
+
+        .whatsapp-icon {
+          font-size: 28px;
+        }
+
+        .whatsapp-float::before {
+          font-size: 12px;
+          padding: 6px 10px;
+          right: 75px;
+        }
+
+        .whatsapp-float::after {
+          right: 65px;
+        }
+      }
+
+      /* Ultra-small screens */
+      @media (max-width: 480px) {
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          bottom: 15px;
+          right: 15px;
+        }
+
+        .whatsapp-icon {
+          font-size: 24px;
+        }
+
+        /* Hide tooltip on very small screens */
+        .whatsapp-float::before,
+        .whatsapp-float::after {
+          display: none;
+        }
+      }
+
+      /* Accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        .whatsapp-float {
+          animation: none;
+        }
+
+        .whatsapp-float .notification-badge {
+          animation: none;
+        }
+      }
+
+      /* High contrast mode */
+      @media (prefers-contrast: high) {
+        .whatsapp-float {
+          border: 3px solid white;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1229,6 +1404,17 @@
         </div>
       </div>
     </section>
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/+919038524720?text=Hello%20Rishav%20Shastri,%20I%20would%20like%20to%20book%20a%20consultation."
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Chat with us on WhatsApp"
+      id="whatsappFloat"
+    >
+      <span class="whatsapp-icon">💬</span>
+      <span class="notification-badge" id="notificationBadge">1</span>
+    </a>
 
     <section id="about" class="section">
       <div class="container">
@@ -1259,7 +1445,9 @@
             </p>
           </div>
           <div class="about-image fade-in">
-            <div class="astrologer-photo">RS</div>
+            <div class="astrologer-photo">
+              <img src="./image/pic_4.jpg" alt="" />
+            </div>
           </div>
         </div>
         <div class="stats fade-in">
@@ -2228,6 +2416,108 @@
 
       // Start typing effect after page load
       setTimeout(typeEffect, 2000);
+      // WhatsApp Float Button Functionality
+      class WhatsAppFloat {
+        constructor() {
+          this.button = document.getElementById("whatsappFloat");
+          this.badge = document.getElementById("notificationBadge");
+          this.isVisible = true;
+          this.lastScrollY = window.scrollY;
+
+          this.init();
+        }
+
+        init() {
+          // Hide/show on scroll for better UX
+          window.addEventListener("scroll", () => this.handleScroll());
+
+          // Click tracking
+          this.button.addEventListener("click", () => this.handleClick());
+
+          // Auto-hide notification badge after some time
+          setTimeout(() => this.hideNotificationBadge(), 10000);
+
+          // Show button with delay for better UX
+          setTimeout(() => this.showButton(), 2000);
+        }
+
+        handleScroll() {
+          const currentScrollY = window.scrollY;
+
+          // Hide when scrolling down fast, show when scrolling up
+          if (currentScrollY > this.lastScrollY && currentScrollY > 200) {
+            this.hideButton();
+          } else {
+            this.showButton();
+          }
+
+          this.lastScrollY = currentScrollY;
+        }
+
+        handleClick() {
+          // Track click event
+          console.log("WhatsApp button clicked");
+
+          // Hide notification badge on click
+          this.hideNotificationBadge();
+
+          // Add click animation
+          this.button.style.transform = "scale(0.9)";
+          setTimeout(() => {
+            this.button.style.transform = "";
+          }, 150);
+        }
+
+        showButton() {
+          if (!this.isVisible) {
+            this.button.style.transform = "translateX(0) scale(1)";
+            this.button.style.opacity = "1";
+            this.isVisible = true;
+          }
+        }
+
+        hideButton() {
+          if (this.isVisible) {
+            this.button.style.transform = "translateX(100px) scale(0.8)";
+            this.button.style.opacity = "0.7";
+            this.isVisible = false;
+          }
+        }
+
+        hideNotificationBadge() {
+          if (this.badge) {
+            this.badge.style.opacity = "0";
+            this.badge.style.transform = "scale(0)";
+            setTimeout(() => {
+              this.badge.style.display = "none";
+            }, 300);
+          }
+        }
+
+        showNotificationBadge(count = 1) {
+          if (this.badge) {
+            this.badge.textContent = count;
+            this.badge.style.display = "flex";
+            this.badge.style.opacity = "1";
+            this.badge.style.transform = "scale(1)";
+          }
+        }
+      }
+
+      // Initialize WhatsApp Float when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        new WhatsAppFloat();
+      });
+
+      // Update phone number function (call this to change the number)
+      function updateWhatsAppNumber(
+        phoneNumber,
+        message = "Hello Rishav Shastri, I would like to book a consultation."
+      ) {
+        const button = document.getElementById("whatsappFloat");
+        const encodedMessage = encodeURIComponent(message);
+        button.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      }
     </script>
   </body>
 </html>
