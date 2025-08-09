@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rishav Shastri - Expert Astrologer & Spiritual Guide</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: radial-gradient(
+          ellipse at top,
+          #0a0f1c 0%,
+          #1a1f2e 25%,
+          #2d1b69 50%,
+          #1a1a2e 75%,
+          #000 100%
+        );
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Magical Particle Background */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: radial-gradient(circle, #ffd700 0%, transparent 70%);
+        border-radius: 50%;
+        animation: float 20s infinite linear;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* Header */
+      header {
+        background: rgba(0, 0, 0, 0.85);
+        padding: 1.5rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        color: #ffd700;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        position: relative;
+      }
+
+      .logo::after {
+        content: "✨";
+        position: absolute;
+        right: -30px;
+        top: -5px;
+        font-size: 1.5rem;
+        animation: sparkle 2s infinite;
+      }
+
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.2);
+        }
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+      }
+
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        position: relative;
+        padding: 0.5rem 0;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #ffd700, #ffed4e);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .nav-links a:hover {
+        color: #ffd700;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 215, 0, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(138, 43, 226, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 80%,
+            rgba(0, 191, 255, 0.1) 0%,
+            transparent 50%
+          );
+        animation: aura 15s ease-in-out infinite;
+      }
+
+      @keyframes aura {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
+
+      .hero-content {
+        z-index: 1;
+        position: relative;
+        max-width: 900px;
+        animation: heroFade 1.5s ease-out;
+      }
+
+      @keyframes heroFade {
+        from {
+          opacity: 0;
+          transform: translateY(80px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(
+          135deg,
+          #ffd700 0%,
+          #ffed4e 25%,
+          #ffd700 50%,
+          #fff 75%,
+          #ffd700 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+        letter-spacing: -2px;
+        text-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+      }
+
+      .hero-subtitle {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #fff, #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 600;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 3rem;
+        opacity: 0.8;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        color: #1a1a2e;
+        padding: 18px 35px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.4s ease;
+        box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .cta-button:hover::before {
+        left: 100%;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(255, 215, 0, 0.6);
+      }
+
+      .cta-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 2px solid rgba(255, 215, 0, 0.5);
+        backdrop-filter: blur(10px);
+      }
+
+      .cta-secondary:hover {
+        background: rgba(255, 215, 0, 0.1);
+        border-color: #ffd700;
+      }
+
+      /* Section Base Styles */
+      .section {
+        padding: 120px 0;
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-alt {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-title {
+        font-size: 3.5rem;
+        background: linear-gradient(135deg, #ffd700 0%, #fff 50%, #ffd700 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* About Section */
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+
+      .about-text {
+        color: white;
+      }
+
+      .about-text p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        opacity: 0.9;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 215, 0, 0.1);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ffd700;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1rem;
+      }
+
+      .about-image {
+        text-align: center;
+        position: relative;
+      }
+
+      .astrologer-photo {
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        font-size: 3rem;
+        color: #1a1a2e;
+        font-weight: 800;
+        box-shadow: 0 30px 80px rgba(255, 215, 0, 0.4);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .astrologer-photo::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          from 0deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        animation: rotate 4s linear infinite;
+      }
+
+      @keyframes rotate {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Services Section */
+      .services {
+        color: white;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 3rem;
+        border-radius: 25px;
+        text-align: center;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 215, 0, 0.15);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.1) 0%,
+          transparent 50%
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .service-card:hover::before {
+        opacity: 1;
+      }
+
+      .service-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 60px rgba(255, 215, 0, 0.3);
+        border-color: rgba(255, 215, 0, 0.4);
+      }
+
+      .service-icon {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        padding: 1rem;
+        background: rgba(255, 215, 0, 0.1);
+        border-radius: 20px;
+        transition: all 0.4s ease;
+      }
+
+      .service-card:hover .service-icon {
+        transform: scale(1.1);
+        background: rgba(255, 215, 0, 0.2);
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #ffd700;
+        font-weight: 600;
+      }
+
+      .service-card p {
+        line-height: 1.7;
+        opacity: 0.9;
+        font-size: 1.1rem;
+      }
+
+      .service-price {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 215, 0, 0.2);
+        color: #ffd700;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      /* Specialized Services */
+      .specialized-services {
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .specialized-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .specialized-card {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.1) 0%,
+          rgba(138, 43, 226, 0.1) 100%
+        );
+        padding: 2.5rem;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        transition: all 0.4s ease;
+      }
+
+      .specialized-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+      }
+
+      .specialized-card h3 {
+        color: #ffd700;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .specialized-card p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .specialized-card .price {
+        color: #ffd700;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      /* Gemstone Section */
+      .gemstone-section {
+        color: white;
+      }
+
+      .gemstone-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .gemstone-card {
+        background: rgba(255, 255, 255, 0.06);
+        padding: 2rem;
+        border-radius: 20px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 215, 0, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      .gemstone-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+      }
+
+      .gemstone-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        background: linear-gradient(135deg, #ff6b6b, #ffd700);
+      }
+
+      /* Consultation Section */
+      .consultation {
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        text-align: center;
+      }
+
+      .consultation-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .consultation-card {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 3rem 2rem;
+        border-radius: 25px;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 215, 0, 0.15);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .consultation-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ffd700, #ffed4e);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+      }
+
+      .consultation-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .consultation-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(255, 215, 0, 0.3);
+      }
+
+      .consultation-card h3 {
+        color: #ffd700;
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      .price {
+        font-size: 2.5rem;
+        color: #ffd700;
+        font-weight: 700;
+        margin: 1.5rem 0;
+        background: linear-gradient(135deg, #ffd700, #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .features-list {
+        list-style: none;
+        margin: 1.5rem 0;
+      }
+
+      .features-list li {
+        margin-bottom: 0.8rem;
+        position: relative;
+        padding-left: 1.5rem;
+        opacity: 0.9;
+      }
+
+      .features-list li::before {
+        content: "✨";
+        position: absolute;
+        left: 0;
+        color: #ffd700;
+      }
+
+      /* Contact Section */
+      .contact {
+        color: white;
+      }
+
+      .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+      }
+
+      .contact-info {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 3rem;
+        border-radius: 25px;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 215, 0, 0.15);
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2.5rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .contact-item:hover {
+        background: rgba(255, 215, 0, 0.1);
+        transform: translateX(10px);
+      }
+
+      .contact-icon {
+        font-size: 1.8rem;
+        margin-right: 1.5rem;
+        width: 40px;
+        text-align: center;
+        color: #ffd700;
+      }
+
+      .contact-details h4 {
+        color: #ffd700;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .contact-form {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 3rem;
+        border-radius: 25px;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 215, 0, 0.15);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .form-group {
+        margin-bottom: 2rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.8rem;
+        color: #ffd700;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border: 2px solid rgba(255, 215, 0, 0.2);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #ffd700;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .submit-btn {
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        color: #1a1a2e;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 25px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .submit-btn:hover::before {
+        left: 100%;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+      }
+
+      /* Footer */
+      footer {
+        background: rgba(0, 0, 0, 0.95);
+        color: white;
+        padding: 4rem 0 2rem;
+        border-top: 1px solid rgba(255, 215, 0, 0.1);
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-section h3 {
+        color: #ffd700;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        line-height: 1.8;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: #ffd700;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 215, 0, 0.1);
+        border-radius: 50%;
+        color: #ffd700;
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 215, 0, 0.2);
+      }
+
+      .social-links a:hover {
+        background: #ffd700;
+        color: #1a1a2e;
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 215, 0, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Mobile Menu */
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .mobile-menu span {
+        width: 25px;
+        height: 3px;
+        background: #ffd700;
+        margin: 3px 0;
+        transition: 0.3s;
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-menu {
+          display: flex;
+        }
+
+        .hero h1 {
+          font-size: 3rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.5rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .about-content,
+        .contact-content {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+        }
+
+        .services-grid,
+        .specialized-grid,
+        .gemstone-grid,
+        .consultation-options {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .astrologer-photo {
+          width: 250px;
+          height: 250px;
+          font-size: 2rem;
+        }
+      }
+
+      /* Loading Animation */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+
+    <header>
+      <nav class="container">
+        <a href="#" class="logo">Rishav Shastri</a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#specialized">Specialized</a></li>
+          <li><a href="#gemstones">Gemstones</a></li>
+          <li><a href="#consultation">Consultation</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Rishav Shastri</h1>
+        <div class="hero-subtitle">Master of Vedic Sciences</div>
+        <p>
+          Illuminate Your Path with Ancient Wisdom • Transform Your Destiny
+          Through Sacred Knowledge • Experience Divine Guidance for Life's
+          Journey
+        </p>
+        <div class="cta-buttons">
+          <a href="#consultation" class="cta-button">🔮 Book Consultation</a>
+          <a href="#services" class="cta-button cta-secondary"
+            >✨ Explore Services</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text fade-in">
+            <div class="section-header">
+              <h2 class="section-title">About Rishav Shastri</h2>
+            </div>
+            <p>
+              With over 18 years of profound experience in Vedic astrology and
+              spiritual sciences, Rishav Shastri stands as a beacon of ancient
+              wisdom in the modern world. Born into a distinguished lineage of
+              spiritual scholars, he has dedicated his life to mastering the
+              sacred arts of Vedic astrology, gemstone therapy, and ceremonial
+              practices.
+            </p>
+            <p>
+              His expertise spans comprehensive birth chart analysis, dosha
+              remediation, sacred yagnas, and personalized gemstone
+              consultations. Combining traditional Sanskrit knowledge with
+              contemporary understanding, he has guided over 50,000+ souls
+              toward spiritual enlightenment and material prosperity.
+            </p>
+            <p>
+              Recognized as one of India's most trusted astrologers, Rishav
+              Shastri's compassionate approach and precise predictions have
+              transformed countless lives across the globe.
+            </p>
+          </div>
+          <div class="about-image fade-in">
+            <div class="astrologer-photo">RS</div>
+          </div>
+        </div>
+        <div class="stats fade-in">
+          <div class="stat-item">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Lives Transformed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">18+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section section-alt services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Sacred Services</h2>
+          <p class="section-subtitle">
+            Comprehensive spiritual solutions rooted in ancient Vedic traditions
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card fade-in">
+            <div class="service-icon">🌟</div>
+            <h3>Complete Birth Chart Analysis</h3>
+            <p>
+              In-depth analysis of your natal chart revealing personality
+              traits, life purpose, karmic patterns, and destiny. Includes
+              detailed predictions for career, relationships, health, and
+              spiritual growth.
+            </p>
+            <div class="service-price">Starting from ₹2,500</div>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon">🏛️</div>
+            <h3>Home Puja Arrangements</h3>
+            <p>
+              Complete arrangement of sacred ceremonies at your residence.
+              Includes Griha Pravesh, Vastu Shanti, Lakshmi Puja, Ganesh
+              Chaturthi, and other auspicious rituals with qualified pandits.
+            </p>
+            <div class="service-price">Starting from ₹5,000</div>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon">💒</div>
+            <h3>Marriage Ceremony Pandit</h3>
+            <p>
+              Experienced pandit services for Hindu weddings, engagement
+              ceremonies, and pre-wedding rituals. Complete Vedic ceremonies
+              with proper mantras, muhurat selection, and traditional practices.
+            </p>
+            <div class="service-price">Starting from ₹25,000</div>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon">💎</div>
+            <h3>Certified Gemstone Consultation</h3>
+            <p>
+              Personalized gemstone recommendations based on your birth chart.
+              Authentic, lab-certified precious stones with proper energization
+              and wearing rituals for maximum astrological benefits.
+            </p>
+            <div class="service-price">Consultation: ₹1,500</div>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon">🔥</div>
+            <h3>Sacred Yagna & Havan</h3>
+            <p>
+              Powerful Vedic fire ceremonies for planetary peace, prosperity,
+              health, and spiritual upliftment. Includes Navagraha Yagna,
+              Mahamrityunjaya Havan, and special occasion ceremonies.
+            </p>
+            <div class="service-price">Starting from ₹8,000</div>
+          </div>
+          <div class="service-card fade-in">
+            <div class="service-icon">🏠</div>
+            <h3>Vastu Consultation</h3>
+            <p>
+              Complete Vastu analysis for homes, offices, and commercial spaces.
+              Includes site visits, detailed reports, and practical remedies to
+              enhance positive energy and remove Vastu doshas.
+            </p>
+            <div class="service-price">Starting from ₹3,500</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="specialized" class="section specialized-services">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Specialized Dosha Remedies</h2>
+          <p class="section-subtitle">
+            Ancient solutions for planetary afflictions and karmic imbalances
+          </p>
+        </div>
+        <div class="specialized-grid">
+          <div class="specialized-card fade-in">
+            <h3>🐍 Kal Sarpa Dosha Mukti</h3>
+            <p>
+              Complete remedial solutions for Kal Sarpa Dosha including
+              specialized pujas, mantras, and gemstone therapy. Performed at
+              sacred temples with proper Vedic procedures for lasting relief.
+            </p>
+            <div class="price">Puja Package: ₹15,000</div>
+          </div>
+          <div class="specialized-card fade-in">
+            <h3>🔴 Mangal Dosha Remediation</h3>
+            <p>
+              Comprehensive Mangal Dosha analysis and remedies including Mangal
+              Bhat Puja, Hanuman Temple visits, coral gemstone recommendations,
+              and marriage compatibility solutions.
+            </p>
+            <div class="price">Complete Package: ₹12,000</div>
+          </div>
+          <div class="specialized-card fade-in">
+            <h3>⚖️ Karmic Dosha Healing</h3>
+            <p>
+              Deep karmic analysis to identify past-life influences affecting
+              current life. Includes Pitru Paksha rituals, ancestral healing
+              ceremonies, and specific remedial measures.
+            </p>
+            <div class="price">Analysis + Remedies: ₹18,000</div>
+          </div>
+          <div class="specialized-card fade-in">
+            <h3>🌅 Shani Dosha Solutions</h3>
+            <p>
+              Saturn-related problem resolution through Shani Shanti Puja, blue
+              sapphire consultation, oil donations, and specific Saturday
+              rituals for Sade Sati and Shani Mahadasha periods.
+            </p>
+            <div class="price">Shanti Package: ₹10,000</div>
+          </div>
+          <div class="specialized-card fade-in">
+            <h3>🌙 Rahu-Ketu Dosha Remedies</h3>
+            <p>
+              Specialized treatments for Rahu-Ketu afflictions including
+              eclipse-period remedies, shadow planet peace ceremonies, and
+              Hessonite/Cat's Eye gemstone consultations.
+            </p>
+            <div class="price">Remedy Package: ₹14,000</div>
+          </div>
+          <div class="specialized-card fade-in">
+            <h3>🙏 Pitra Dosha Nivaran</h3>
+            <p>
+              Ancestral debt clearing through Pitra Paksha ceremonies, Gaya
+              Shraddh arrangements, family lineage healing, and specific rituals
+              for departed souls' peace.
+            </p>
+            <div class="price">Complete Ritual: ₹20,000</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gemstones" class="section gemstone-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Certified Gemstones</h2>
+          <p class="section-subtitle">
+            Authentic, lab-certified gemstones with proper energization for
+            maximum astrological benefits
+          </p>
+        </div>
+        <div class="gemstone-grid">
+          <div class="gemstone-card fade-in">
+            <div
+              class="gemstone-icon"
+              style="background: linear-gradient(135deg, #ff0000, #ff6666)"
+            >
+              💎
+            </div>
+            <h3>Ruby (Manik)</h3>
+            <p>
+              For Sun planet strength, leadership qualities, confidence, and
+              government favor.
+            </p>
+            <div class="price">₹5,000 - ₹2,50,000</div>
+          </div>
+          <div class="gemstone-card fade-in">
+            <div
+              class="gemstone-icon"
+              style="background: linear-gradient(135deg, #ffffff, #f0f0f0)"
+            >
+              🌙
+            </div>
+            <h3>Pearl (Moti)</h3>
+            <p>
+              For Moon strength, emotional stability, mental peace, and mother's
+              blessings.
+            </p>
+            <div class="price">₹2,000 - ₹50,000</div>
+          </div>
+          <div class="gemstone-card fade-in">
+            <div
+              class="gemstone-icon"
+              style="background: linear-gradient(135deg, #ff4500, #ff8c00)"
+            >
+              🔸
+            </div>
+            <h3>Red Coral (Moonga)</h3>
+            <p>
+              For Mars strength, courage, energy, property matters, and
+              overcoming enemies.
+            </p>
+            <div class="price">₹1,500 - ₹25,000</div>
+          </div>
+          <div class="gemstone-card fade-in">
+            <div
+              class="gemstone-icon"
+              style="background: linear-gradient(135deg, #32cd32, #90ee90)"
+            >
+              💚
+            </div>
+            <h3>Emerald (Panna)</h3>
+            <p>
+              For Mercury strength, intelligence, communication, business
+              success, and education.
+            </p>
+            <div class="price">₹8,000 - ₹3,00,000</div>
+          </div>
+          <div class="gemstone-card fade-in">
+            <div
+              class="gemstone-icon"
+              style="background: linear-gradient(135deg, #ffff00, #ffffe0)"
+            >
+              💛
+            </div>
+            <h3>Yellow Sapphire (Pukhraj)</h3>
+            <p>
+              For Jupiter strength, wisdom, wealth, marriage, children, and
+              spiritual growth.
+            </p>
+            <div class="price">₹10,000 - ₹5,00,000</div>
+          </div>
+          <div class="gemstone-card fade-in">
+            <div
+              class="gemstone-icon"
+              style="background: linear-gradient(135deg, #4169e1, #87ceeb)"
+            >
+              💙
+            </div>
+            <h3>Blue Sapphire (Neelam)</h3>
+            <p>
+              For Saturn strength, discipline, focus, longevity, and overcoming
+              obstacles.
+            </p>
+            <div class="price">₹15,000 - ₹10,00,000</div>
+          </div>
+          <div class="gemstone-card fade-in">
+            <div
+              class="gemstone-icon"
+              style="background: linear-gradient(135deg, #adff2f, #7fff00)"
+            >
+              💎
+            </div>
+            <h3>Hessonite (Gomed)</h3>
+            <p>
+              For Rahu strength, foreign connections, sudden gains, and material
+              success.
+            </p>
+            <div class="price">₹2,500 - ₹75,000</div>
+          </div>
+          <div class="gemstone-card fade-in">
+            <div
+              class="gemstone-icon"
+              style="background: linear-gradient(135deg, #9370db, #dda0dd)"
+            >
+              🔮
+            </div>
+            <h3>Cat's Eye (Lehsunia)</h3>
+            <p>
+              For Ketu strength, spiritual insight, intuition, and protection
+              from negative energies.
+            </p>
+            <div class="price">₹3,000 - ₹1,00,000</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consultation" class="section consultation">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Consultation Options</h2>
+          <p class="section-subtitle">
+            Choose your preferred method of spiritual guidance
+          </p>
+        </div>
+        <div class="consultation-options">
+          <div class="consultation-card fade-in">
+            <h3>📞 Phone Consultation</h3>
+            <div class="price">₹2,100</div>
+            <ul class="features-list">
+              <li>60-minute detailed session</li>
+              <li>Complete birth chart analysis</li>
+              <li>Career & relationship guidance</li>
+              <li>Remedial suggestions</li>
+              <li>Follow-up support</li>
+            </ul>
+          </div>
+          <div class="consultation-card fade-in">
+            <h3>💻 Video Consultation</h3>
+            <div class="price">₹2,800</div>
+            <ul class="features-list">
+              <li>75-minute comprehensive session</li>
+              <li>Face-to-face interaction</li>
+              <li>Visual chart explanation</li>
+              <li>Written report included</li>
+              <li>Gemstone recommendations</li>
+            </ul>
+          </div>
+          <div class="consultation-card fade-in">
+            <h3>🏛️ Temple Consultation</h3>
+            <div class="price">₹5,500</div>
+            <ul class="features-list">
+              <li>Sacred temple environment</li>
+              <li>120-minute detailed session</li>
+              <li>Complete astrological analysis</li>
+              <li>Puja recommendations</li>
+              <li>Blessed rudraksha/gemstone</li>
+            </ul>
+          </div>
+          <div class="consultation-card fade-in">
+            <h3>📋 Premium Report</h3>
+            <div class="price">₹1,800</div>
+            <ul class="features-list">
+              <li>25-page comprehensive report</li>
+              <li>5-year predictions</li>
+              <li>Detailed remedy section</li>
+              <li>Muhurat recommendations</li>
+              <li>Digital & hard copy</li>
+            </ul>
+          </div>
+          <div class="consultation-card fade-in">
+            <h3>👥 Family Consultation</h3>
+            <div class="price">₹8,500</div>
+            <ul class="features-list">
+              <li>Complete family chart analysis</li>
+              <li>Relationship compatibility</li>
+              <li>Children's guidance</li>
+              <li>Family harmony solutions</li>
+              <li>Group remedial measures</li>
+            </ul>
+          </div>
+          <div class="consultation-card fade-in">
+            <h3>💼 Business Consultation</h3>
+            <div class="price">₹12,000</div>
+            <ul class="features-list">
+              <li>Business astrology analysis</li>
+              <li>Partnership compatibility</li>
+              <li>Muhurat for ventures</li>
+              <li>Financial timing guidance</li>
+              <li>Office Vastu consultation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Connect With Us</h2>
+          <p class="section-subtitle">
+            Begin your spiritual transformation journey today
+          </p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info fade-in">
+            <h3 style="color: #ffd700; margin-bottom: 2rem; font-size: 1.5rem">
+              Get In Touch
+            </h3>
+            <div class="contact-item">
+              <span class="contact-icon">📱</span>
+              <div class="contact-details">
+                <h4>Phone & WhatsApp</h4>
+                <p>+91 98765 43210<br />+91 87654 32109</p>
+                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.6)">
+                  Available 9 AM - 8 PM
+                </p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <div class="contact-details">
+                <h4>Email Address</h4>
+                <p>
+                  info@rishavshastri.com<br />consultation@rishavshastri.com
+                </p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div class="contact-details">
+                <h4>Office Address</h4>
+                <p>
+                  123 Spiritual Heritage Lane<br />Connaught Place, New Delhi<br />India
+                  - 110001
+                </p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🕐</span>
+              <div class="contact-details">
+                <h4>Consultation Hours</h4>
+                <p>
+                  Monday - Saturday: 9:00 AM - 8:00 PM<br />Sunday: 10:00 AM -
+                  6:00 PM<br />Emergency: 24/7 Available
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form fade-in">
+            <h3 style="color: #ffd700; margin-bottom: 2rem; font-size: 1.5rem">
+              Book Your Consultation
+            </h3>
+            <form id="consultationForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+91 XXXXX XXXXX"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="consultation-type">Consultation Type</label>
+                  <select
+                    id="consultation-type"
+                    name="consultation-type"
+                    required
+                  >
+                    <option value="">Select consultation type</option>
+                    <option value="phone">Phone Consultation</option>
+                    <option value="video">Video Consultation</option>
+                    <option value="temple">Temple Consultation</option>
+                    <option value="report">Premium Report</option>
+                    <option value="family">Family Consultation</option>
+                    <option value="business">Business Consultation</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="dob">Date of Birth *</label>
+                  <input type="date" id="dob" name="dob" required />
+                </div>
+                <div class="form-group">
+                  <label for="time">Time of Birth</label>
+                  <input
+                    type="time"
+                    id="time"
+                    name="time"
+                    placeholder="HH:MM"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="place">Place of Birth</label>
+                <input
+                  type="text"
+                  id="place"
+                  name="place"
+                  placeholder="City, State, Country"
+                />
+              </div>
+              <div class="form-group">
+                <label for="concerns">Your Concerns/Questions</label>
+                <textarea
+                  id="concerns"
+                  name="concerns"
+                  rows="4"
+                  placeholder="Please describe your specific concerns, questions about career, relationship, health, or any other life matters you'd like guidance on..."
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                🔮 Book Consultation Now
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Rishav Shastri</h3>
+            <p>
+              Master of Vedic Sciences with 18+ years of experience in
+              transforming lives through ancient wisdom and modern
+              understanding.
+            </p>
+            <div class="social-links">
+              <a href="#" title="Facebook">📘</a>
+              <a href="#" title="Instagram">📷</a>
+              <a href="#" title="YouTube">📺</a>
+              <a href="#" title="WhatsApp">💬</a>
+              <a href="#" title="Telegram">🔵</a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <p><a href="#about">About Rishav Shastri</a></p>
+            <p><a href="#services">Sacred Services</a></p>
+            <p><a href="#specialized">Dosha Remedies</a></p>
+            <p><a href="#gemstones">Certified Gemstones</a></p>
+            <p><a href="#consultation">Book Consultation</a></p>
+          </div>
+          <div class="footer-section">
+            <h3>Specializations</h3>
+            <p>Birth Chart Analysis</p>
+            <p>Marriage Ceremonies</p>
+            <p>Home Puja Arrangements</p>
+            <p>Kal Sarpa Dosha Mukti</p>
+            <p>Gemstone Therapy</p>
+            <p>Vastu Consultation</p>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>📱 +91 98765 43210</p>
+            <p>📧 info@rishavshastri.com</p>
+            <p>📍 New Delhi, India</p>
+            <p>🕐 Mon-Sat: 9 AM - 8 PM</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Rishav Shastri. All rights reserved. | Vedic Astrologer
+            | Spiritual Guide | Dosha Remedy Specialist
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Particle Background Generator
+      function createParticles() {
+        const particlesContainer = document.getElementById("particles");
+        const numberOfParticles = 50;
+
+        for (let i = 0; i < numberOfParticles; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 20 + "s";
+          particle.style.animationDuration = Math.random() * 10 + 15 + "s";
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      // Intersection Observer for Fade-in Animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Contact form submission
+      document
+        .getElementById("consultationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const data = {};
+          formData.forEach((value, key) => {
+            data[key] = value;
+          });
+
+          // Show success message with animation
+          const button = this.querySelector(".submit-btn");
+          const originalText = button.innerHTML;
+          button.innerHTML = "✅ Consultation Booked!";
+          button.style.background = "linear-gradient(135deg, #4CAF50, #45a049)";
+
+          setTimeout(() => {
+            button.innerHTML = originalText;
+            button.style.background =
+              "linear-gradient(135deg, #ffd700, #ffed4e)";
+            this.reset();
+          }, 3000);
+
+          alert(
+            "🙏 Thank you for choosing Rishav Shastri! Your consultation request has been received. Our team will contact you within 2 hours to confirm your appointment and discuss the consultation details."
+          );
+        });
+
+      // Header background change on scroll
+      let lastScrollY = 0;
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 100) {
+          header.style.background = "rgba(0, 0, 0, 0.98)";
+          header.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.5)";
+        } else {
+          header.style.background = "rgba(0, 0, 0, 0.85)";
+          header.style.boxShadow = "none";
+        }
+
+        lastScrollY = currentScrollY;
+      });
+
+      // Mobile menu toggle
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const navLinks = document.querySelector(".nav-links");
+
+      mobileMenu.addEventListener("click", () => {
+        navLinks.style.display =
+          navLinks.style.display === "flex" ? "none" : "flex";
+        navLinks.style.flexDirection = "column";
+        navLinks.style.position = "absolute";
+        navLinks.style.top = "100%";
+        navLinks.style.left = "0";
+        navLinks.style.right = "0";
+        navLinks.style.background = "rgba(0, 0, 0, 0.95)";
+        navLinks.style.padding = "2rem";
+        navLinks.style.backdropFilter = "blur(20px)";
+      });
+
+      // Initialize when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        createParticles();
+
+        // Observe all fade-in elements
+        document.querySelectorAll(".fade-in").forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Add loading animation to service cards
+        const cards = document.querySelectorAll(
+          ".service-card, .specialized-card, .gemstone-card, .consultation-card"
+        );
+        cards.forEach((card, index) => {
+          card.style.animationDelay = `${index * 0.1}s`;
+        });
+      });
+
+      // Add dynamic typing effect to hero subtitle
+      function typeEffect() {
+        const subtitle = document.querySelector(".hero-subtitle");
+        const texts = [
+          "Master of Vedic Sciences",
+          "Spiritual Guide & Mentor",
+          "Dosha Remedy Specialist",
+          "Gemstone Therapy Expert",
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+          const currentText = texts[textIndex];
+
+          if (!isDeleting) {
+            subtitle.textContent = currentText.slice(0, charIndex + 1);
+            charIndex++;
+
+            if (charIndex === currentText.length) {
+              isDeleting = true;
+              setTimeout(type, 2000); // Pause at the end
+              return;
+            }
+          } else {
+            subtitle.textContent = currentText.slice(0, charIndex - 1);
+            charIndex--;
+
+            if (charIndex === 0) {
+              isDeleting = false;
+              textIndex = (textIndex + 1) % texts.length;
+            }
+          }
+
+          setTimeout(type, isDeleting ? 50 : 100);
+        }
+
+        type();
+      }
+
+      // Start typing effect after page load
+      setTimeout(typeEffect, 2000);
+    </script>
+  </body>
+</html>
