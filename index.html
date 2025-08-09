@@ -613,6 +613,202 @@
         background: linear-gradient(135deg, #ff6b6b, #ffd700);
       }
 
+      /* Gallery Section */
+      .gallery-section {
+        background: rgba(255, 255, 255, 0.03);
+        color: white;
+        overflow: hidden;
+      }
+
+      .gallery-carousel {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .carousel-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 25px;
+        backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 215, 0, 0.15);
+        box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1);
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        width: 600%;
+      }
+
+      .carousel-slide {
+        min-width: calc(100% / 6);
+        padding: 0;
+      }
+
+      .gallery-item {
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .placeholder-image {
+        width: 100%;
+        height: 400px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+      }
+
+      .placeholder-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+      }
+
+      .placeholder-image:hover::before {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      .placeholder-image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 20px 50px rgba(255, 215, 0, 0.2);
+      }
+
+      .image-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+      }
+
+      .image-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .image-content h4 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+      }
+
+      .gallery-caption h4 {
+        color: #ffd700;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .gallery-caption p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 215, 0, 0.9);
+        color: #1a1a2e;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        z-index: 10;
+        box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+      }
+
+      .carousel-btn:hover {
+        background: #ffd700;
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+      }
+
+      .prev-btn {
+        left: 20px;
+      }
+
+      .next-btn {
+        right: 20px;
+      }
+
+      .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .dot.active {
+        background: #ffd700;
+        transform: scale(1.2);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        border-color: rgba(255, 215, 0, 0.3);
+      }
+
+      .dot:hover {
+        background: rgba(255, 215, 0, 0.7);
+        transform: scale(1.1);
+      }
+
+      /* Mobile Responsiveness for Gallery */
+      @media (max-width: 768px) {
+        .carousel-btn {
+          width: 40px;
+          height: 40px;
+          font-size: 1.2rem;
+        }
+
+        .prev-btn {
+          left: 10px;
+        }
+
+        .next-btn {
+          right: 10px;
+        }
+
+        .placeholder-image {
+          height: 300px;
+        }
+
+        .image-icon {
+          font-size: 3rem;
+        }
+
+        .gallery-item {
+          padding: 1.5rem;
+        }
+      }
+
       /* Consultation Section */
       .consultation {
         background: rgba(255, 255, 255, 0.05);
@@ -1350,6 +1546,158 @@
       </div>
     </section>
 
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Sacred Gallery</h2>
+          <p class="section-subtitle">
+            Witness the divine moments of spiritual ceremonies and
+            transformations
+          </p>
+        </div>
+        <div class="gallery-carousel">
+          <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="carousel-slide active">
+                <div class="gallery-item">
+                  <div
+                    class="placeholder-image"
+                    style="
+                      background: linear-gradient(135deg, #ff6b6b, #ffd700);
+                    "
+                  >
+                    <div class="image-content">
+                      <div class="image-icon">🏛️</div>
+                      <h4>Temple Consultation</h4>
+                    </div>
+                  </div>
+                  <div class="gallery-caption">
+                    <h4>Sacred Temple Consultation</h4>
+                    <p>
+                      Divine guidance in the holy atmosphere of ancient temples
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="gallery-item">
+                  <div
+                    class="placeholder-image"
+                    style="
+                      background: linear-gradient(135deg, #4caf50, #8bc34a);
+                    "
+                  >
+                    <div class="image-content">
+                      <div class="image-icon">🔥</div>
+                      <h4>Yagna Ceremony</h4>
+                    </div>
+                  </div>
+                  <div class="gallery-caption">
+                    <h4>Sacred Fire Ceremony</h4>
+                    <p>
+                      Powerful Vedic yagna for planetary peace and prosperity
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="gallery-item">
+                  <div
+                    class="placeholder-image"
+                    style="
+                      background: linear-gradient(135deg, #9c27b0, #e91e63);
+                    "
+                  >
+                    <div class="image-content">
+                      <div class="image-icon">💒</div>
+                      <h4>Wedding Ceremony</h4>
+                    </div>
+                  </div>
+                  <div class="gallery-caption">
+                    <h4>Sacred Marriage Rituals</h4>
+                    <p>
+                      Traditional Vedic wedding ceremonies with proper mantras
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="gallery-item">
+                  <div
+                    class="placeholder-image"
+                    style="
+                      background: linear-gradient(135deg, #2196f3, #00bcd4);
+                    "
+                  >
+                    <div class="image-content">
+                      <div class="image-icon">💎</div>
+                      <h4>Gemstone Collection</h4>
+                    </div>
+                  </div>
+                  <div class="gallery-caption">
+                    <h4>Certified Gemstones</h4>
+                    <p>
+                      Authentic, lab-certified gems with proper energization
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="gallery-item">
+                  <div
+                    class="placeholder-image"
+                    style="
+                      background: linear-gradient(135deg, #ff9800, #ffc107);
+                    "
+                  >
+                    <div class="image-content">
+                      <div class="image-icon">🏠</div>
+                      <h4>Home Puja</h4>
+                    </div>
+                  </div>
+                  <div class="gallery-caption">
+                    <h4>Home Puja Arrangements</h4>
+                    <p>
+                      Sacred ceremonies conducted in the comfort of your home
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="gallery-item">
+                  <div
+                    class="placeholder-image"
+                    style="
+                      background: linear-gradient(135deg, #795548, #8d6e63);
+                    "
+                  >
+                    <div class="image-content">
+                      <div class="image-icon">🐍</div>
+                      <h4>Dosha Remedies</h4>
+                    </div>
+                  </div>
+                  <div class="gallery-caption">
+                    <h4>Specialized Dosha Healing</h4>
+                    <p>Powerful remedies for Kal Sarpa and other doshas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-btn prev-btn" id="prevBtn">❮</button>
+            <button class="carousel-btn next-btn" id="nextBtn">❯</button>
+          </div>
+          <div class="carousel-dots" id="carouselDots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+            <span class="dot" data-slide="5"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="consultation" class="section consultation">
       <div class="container">
         <div class="section-header">
@@ -1739,9 +2087,91 @@
         navLinks.style.backdropFilter = "blur(20px)";
       });
 
+      // Gallery Carousel Functionality
+      class GalleryCarousel {
+        constructor() {
+          this.track = document.getElementById("carouselTrack");
+          this.slides = document.querySelectorAll(".carousel-slide");
+          this.dots = document.querySelectorAll(".dot");
+          this.prevBtn = document.getElementById("prevBtn");
+          this.nextBtn = document.getElementById("nextBtn");
+          this.currentSlide = 0;
+          this.totalSlides = this.slides.length;
+
+          this.init();
+        }
+
+        init() {
+          // Add event listeners
+          this.prevBtn.addEventListener("click", () => this.prevSlide());
+          this.nextBtn.addEventListener("click", () => this.nextSlide());
+
+          // Add dot navigation
+          this.dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => this.goToSlide(index));
+          });
+
+          // Auto-play carousel
+          this.startAutoPlay();
+
+          // Pause on hover
+          const carousel = document.querySelector(".gallery-carousel");
+          carousel.addEventListener("mouseenter", () => this.stopAutoPlay());
+          carousel.addEventListener("mouseleave", () => this.startAutoPlay());
+        }
+
+        updateCarousel() {
+          const translateX = -this.currentSlide * (100 / this.totalSlides);
+          this.track.style.transform = `translateX(${translateX}%)`;
+
+          // Update dots
+          this.dots.forEach((dot) => dot.classList.remove("active"));
+          this.dots[this.currentSlide].classList.add("active");
+
+          // Update slides
+          this.slides.forEach((slide) => slide.classList.remove("active"));
+          this.slides[this.currentSlide].classList.add("active");
+        }
+
+        nextSlide() {
+          this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+          this.updateCarousel();
+        }
+
+        prevSlide() {
+          this.currentSlide =
+            this.currentSlide === 0
+              ? this.totalSlides - 1
+              : this.currentSlide - 1;
+          this.updateCarousel();
+        }
+
+        goToSlide(index) {
+          this.currentSlide = index;
+          this.updateCarousel();
+        }
+
+        startAutoPlay() {
+          this.autoPlayInterval = setInterval(() => {
+            this.nextSlide();
+          }, 4000);
+        }
+
+        stopAutoPlay() {
+          if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+          }
+        }
+      }
+
       // Initialize when DOM is loaded
       document.addEventListener("DOMContentLoaded", function () {
         createParticles();
+
+        // Initialize Gallery Carousel
+        if (document.getElementById("carouselTrack")) {
+          new GalleryCarousel();
+        }
 
         // Observe all fade-in elements
         document.querySelectorAll(".fade-in").forEach((el) => {
